@@ -3,15 +3,11 @@ import { users } from "../data/data.js";
 const Exercise1 = () => {
   return (
     <ul>
-      {users.map((user) => {
-        const isAdult = user.age >= 18;
-
-        return (
+      {users.map((user) => (
           <li key={user.id}>
-            {user.name} {isAdult && "（成人）"}
+            {user.name} {user.age >= 18 && "（成人）"}
           </li>
-        );
-      })}
+      ))}
     </ul>
   );
 };

@@ -5,15 +5,11 @@ const Exercise2 = () => {
 
   return (
     <ul>
-      {wideDevices.map((device) => {
-        const isLuxury = device.price >= 1000;
-
-        return (
+      {wideDevices.map((device) => (
           <li key={device.id}>
-            {device.name} {isLuxury ? "💰 高級品" : "🛒 お買い得"}
+            {device.name} {device.price >= 1000 ? "💰 高級品" : "🛒 お買い得"}
           </li>
-        );
-      })}
+      ))}
     </ul>
   );
 };
